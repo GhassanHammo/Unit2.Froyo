@@ -6,15 +6,17 @@ const userInput = prompt(
 const foryoFlavors = userInput.split(",");
 console.log("vanilla,vanilla,vanilla,strawberry,coffee,coffee");
 
-const arr = [foryoFlavors];
-const count = {};
+const iceCream = (arr) => {
+  const count = {};
 
-for (const flavors of foryoFlavors) {
-  if (count[flavors]) {
-    count[flavors] += 1;
-  } else {
-    count[flavors] = 1;
+  for (const flavors of arr) {
+    if (count[flavors]) {
+      count[flavors] += 1;
+    } else {
+      count[flavors] = 1;
+    }
   }
-}
+  return count;
+};
 
-console.table(count);
+console.table(iceCream(foryoFlavors));
